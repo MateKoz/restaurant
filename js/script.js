@@ -5,15 +5,29 @@ const welcomeBox = document.querySelector(".welcome__box");
 const inputWelcome = document.querySelector(".welcome__form-input");
 const personName = document.querySelector('.hello__name')
 
+
 const confirmName = (e) => {
     e.preventDefault();
-    welcomeBox.style.display = 'none';
-    const name = inputWelcome.value;
-    personName.textContent = `${name}`
-
+    let name = inputWelcome.value;
+    localStorage.setItem('savedName', name);
+    showName();
 }
 
-confirmWelcomeBtn.addEventListener('click', confirmName)
+const showName = () => {
+    const nameFromStorage = localStorage.getItem("savedName");
+    personName.textContent = `${nameFromStorage}`;
+    if (nameFromStorage != null) {
+        welcomeBox.style.display = 'none';
+    }
+}
+showName();
+
+
+
+confirmWelcomeBtn.addEventListener('click', confirmName);
+
+
+
 
 
 
