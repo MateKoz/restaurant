@@ -1,0 +1,77 @@
+@import "../colors";
+
+.welcome__box {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+
+  &-background {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../../img/welcome background/bgc-welcome-small.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
+  &-form {
+    position: relative;
+    height: 40rem;
+    width: 90vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+
+    .welcome__text {
+      text-align: center;
+      padding: 1rem;
+
+      .welcome__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-name {
+          margin: 0.5rem;
+        }
+
+        &-input {
+          width: 15rem;
+          margin: 1rem;
+          padding-left: 1rem;
+          padding-bottom: 0.3rem;
+          border: none;
+          border-bottom: 1px solid grey;
+          outline: none;
+          &:focus {
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+
+    &-logo {
+      width: 100%;
+      height: 15%;
+      background-color: rgba(39, 121, 31, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        height: 5rem;
+      }
+
+      & h3 {
+        margin: 0;
+        font-family: 'Dancing Script', cursive;
+        font-size: 4rem;
+        color: $pure-white;
+      }
+    }
+  }
+
+}

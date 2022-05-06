@@ -1,0 +1,9 @@
+@import "colors";
+
+.btn {
+  padding: 0.5rem 2rem;
+  background-color: $main-green;
+  border: none;
+  color: $pure-white;
+  cursor: pointer;
+}

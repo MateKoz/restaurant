@@ -5,12 +5,44 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/f6b17e6e38.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scss/main.css">
     <title>Restaurant</title>
 </head>
 
 <body>
+<div class="hello">
+    <h3>Witaj <span class="hello__name"></span></h3>
+</div>
 
+
+<section class="welcome__box">
+    <div class="welcome__box-background">
+        <div class="welcome__box-form">
+            <div class="welcome__box-form-logo">
+                <img src="img/welcome%20background/fork.png" alt="fork icon">
+                <h3>Restaurant</h3>
+                <img src="img/welcome%20background/knife.png" alt="knife icon">
+
+            </div>
+            <div class="welcome__text">
+                <h3 class="welcome__text-h3">Witamy poraz pierwszy na naszej stronie.</h3>
+                <p class="welcome__text-p">Mamy nadzieje, że znajdziesz tutaj wszystko czego potrzebujesz.
+                </p>
+                <p class="welcome__text-p">Nasza kuchania posiada wiele dań, każdy znajdzie tutaj coś dla siebie.
+                </p>
+                <form class="welcome__form">
+                    <h3 class="welcome__form-name">Przedstaw się nam :)</h3>
+                    <label for="name" class="welcome__form-label">Jak Ci na imię?</label>
+                    <input type="text" class="welcome__form-input" id="name" placeholder="Wpisz swoję imię">
+                    <button class="welcome__form-btn btn">Potwierdź</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <script src="js/script.js"></script>
