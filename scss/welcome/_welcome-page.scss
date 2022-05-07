@@ -41,11 +41,11 @@
         &-input {
           width: 15rem;
           margin: 1rem;
-          padding-left: 1rem;
-          padding-bottom: 0.3rem;
-          border: none;
-          border-bottom: 1px solid grey;
+          padding: 0.3rem 1rem;
+          //border: none;
+          border: 1px solid grey;
           outline: none;
+
           &:focus {
             border: 1px solid black;
           }
