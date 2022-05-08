@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,10 +17,11 @@
 <!--welcome box-->
 <section class="welcome__box">
     <div class="welcome__box-background">
+        <div class="welcome__box-background-shadow"></div>
         <div class="welcome__box-form">
             <div class="welcome__box-form-logo">
                 <img src="img/welcome%20background/fork.png" alt="fork icon">
-                <h3>Restaurant</h3>
+                <h3 class="nav__info-h3">Restaurant<</h3>
                 <img src="img/welcome%20background/knife.png" alt="knife icon">
 
             </div>
@@ -31,9 +32,10 @@
                 <p class="welcome__text-p">Nasza kuchania posiada wiele dań, każdy znajdzie tutaj coś dla siebie.
                 </p>
                 <form class="welcome__form">
-                    <h3 class="welcome__form-name">Przedstaw się nam :)</h3>
+                    <h3 class="welcome__form-name">Przedstaw się nam.</h3>
                     <label for="name" class="welcome__form-label">Jak Ci na imię?</label>
                     <input type="text" class="welcome__form-input" id="name" placeholder="Wpisz swoję imię">
+                    <span class="welcome__form-input-error">Musisz uzupełnić pole.</span>
                     <button class="welcome__form-btn btn">Potwierdź</button>
                 </form>
             </div>
@@ -43,11 +45,47 @@
 
 <!--main navbar-->
 <!--main navbar-->
-<section></section>
-<div class="hello">
-    <h3>Witaj <span class="hello__name"></span></h3>
-</div>
+<nav class="nav">
+    <div class="nav__info wrapper">
+        <h3 class="nav__info-h3">Restaurant</h3>
+        <div class="nav__info-right">
+            <div class="nav__info-shop">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="nav__info-shop-price">325,24 zł</span>
+            </div>
+        </div>
+    </div>
+</nav>
+<header class="header wrapper">
+    <p class="header__welcome">Witaj <span class="header__name-input"></span>,<br> na co masz dziś ochotę?</p>
+    <div class="header__menu">
+        <div class="header__menu-box">
+            <img src="img/landingpage/menu%20icon/cheese-burger.png" alt="burger icon" class="header__menu-box-meal">
+            <p class="header__menu-box-text">Burger</p>
+        </div>
+        <div class="header__menu-box">
+            <img src="img/landingpage/menu%20icon/pizza.png" alt="pizza icon" class="header__menu-box-meal">
+            <p class="header__menu-box-text">Pizza</p>
+        </div>
+        <div class="header__menu-box">
+            <img src="img/landingpage/menu%20icon/salad.png" alt="salad icon" class="header__menu-box-meal">
+            <p class="header__menu-box-text">Sałatka</p>
+        </div>
+        <div class="header__menu-box">
+            <img src="img/landingpage/menu%20icon/pasta.png" alt="pasta icon" class="header__menu-box-meal">
+            <p class="header__menu-box-text">Makaron</p>
+        </div>
+        <div class="header__menu-box">
+            <img src="img/landingpage/menu%20icon/beer.png" alt="beer icon" class="header__menu-box-meal">
+            <p class="header__menu-box-text">Napoje</p>
+        </div>
+        <div class="header__menu-box">
+            <img src="img/landingpage/menu%20icon/piece-of-cake.png" alt="cake icon" class="header__menu-box-meal">
+            <p class="header__menu-box-text">Deser</p>
+        </div>
+    </div>
 
+</header>
 
 <script src="js/script.js"></script>
 </body>

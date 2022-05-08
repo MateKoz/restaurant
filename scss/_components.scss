@@ -1,9 +1,15 @@
 @import "colors";
 
 .btn {
-  padding: 0.5rem 2rem;
-  background-color: $main-green;
+  padding: 1rem 3rem;
+  background-color: $main-blue;
   border: none;
   color: $pure-white;
   cursor: pointer;
+  border-radius: 13px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
 }

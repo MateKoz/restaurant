@@ -14,20 +14,35 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
+
+    &-shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(47, 133, 185, 0.1);
+    }
   }
 
   &-form {
     position: relative;
-    height: 40rem;
-    width: 90vw;
+    width: 65vw;
+    min-width: 25rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 3px 5px black;
+    border-radius: 10px;
+    overflow: hidden;
+
 
     .welcome__text {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
+
+      &-p {
+        padding: 1rem;
+      }
 
       .welcome__form {
         display: flex;
@@ -39,10 +54,10 @@
         }
 
         &-input {
-          width: 15rem;
-          margin: 1rem;
+          width: 65%;
+          margin: 2rem 1rem 0 1rem;
           padding: 0.3rem 1rem;
-          //border: none;
+          text-align: center;
           border: 1px solid grey;
           outline: none;
 
@@ -50,19 +65,30 @@
             border: 1px solid black;
           }
         }
+
+        &-btn {
+          margin: 1rem;
+        }
+
+        &-input-error {
+          margin-top: 0.5rem;
+          color: tomato;
+          font-weight: bold;
+          visibility: hidden;
+        }
       }
     }
 
     &-logo {
       width: 100%;
-      height: 15%;
-      background-color: rgba(39, 121, 31, 0.8);
+      background-color: $main-blue;
       display: flex;
       justify-content: center;
       align-items: center;
 
       & img {
         height: 5rem;
+        padding: 1rem 0;
       }
 
       & h3 {

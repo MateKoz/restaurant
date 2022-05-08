@@ -2,6 +2,8 @@
 @import "welcome/welcome-page";
 @import "colors";
 @import "components";
+@import "landingpage/nav";
+@import "landingpage/header";
 
 html {
   font-size: 62.5%;
@@ -10,4 +12,25 @@ html {
 body {
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
+}
+p {
+  margin: 0;
+}
+
+//media query /////////////////////////////////////////////////////////////////
+//media query /////////////////////////////////////////////////////////////////
+
+@media(min-width: 768px) {
+  .welcome__box-background {
+    background-image: url("../img/welcome background/bgc-welcome-big.jpg");
+  }
+  .welcome__box-form {
+    width: 40rem;
+  }
+}
+
+@media(min-width: 992px) {
+  .welcome__box-form {
+    width: 50rem;
+  }
 }
