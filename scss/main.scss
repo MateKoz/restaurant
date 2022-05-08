@@ -4,6 +4,7 @@
 @import "components";
 @import "landingpage/nav";
 @import "landingpage/header";
+@import "landingpage/menuBox";
 
 html {
   font-size: 62.5%;
@@ -13,6 +14,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
 }
+
 p {
   margin: 0;
 }
@@ -20,12 +22,31 @@ p {
 //media query /////////////////////////////////////////////////////////////////
 //media query /////////////////////////////////////////////////////////////////
 
+@media (max-width: 356px) {
+  .header__menu-box {
+    width: 60%;
+  }
+  .header__welcome {
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .nav__info-h3 {
+    font-size: 3.5rem;
+  }
+}
+
 @media(min-width: 768px) {
   .welcome__box-background {
     background-image: url("../img/welcome background/bgc-welcome-big.jpg");
   }
   .welcome__box-form {
     width: 40rem;
+  }
+  .header__menu-box {
+    width: 27%;
+  }
+  .fa-cart-shopping {
+    font-size: 5rem;
   }
 }
 

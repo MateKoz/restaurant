@@ -451,12 +451,15 @@ template {
 }
 .nav__info-h3 {
   font-family: "Dancing Script", cursive;
-  font-size: 4rem;
+  font-size: 5rem;
+  color: rgba(47, 133, 185, 0.8);
+  margin: 0;
 }
 .nav__info-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem;
 }
 .nav__info-shop {
   display: flex;
@@ -475,32 +478,45 @@ template {
   position: absolute;
   align-self: center;
   color: rgb(47, 133, 185);
-  font-size: 2rem;
+  font-size: 2.3rem;
+  cursor: pointer;
 }
 
 .header {
   width: 100%;
-  color: #3d3d3d;
+  color: rgb(61, 61, 61);
 }
 .header__welcome {
   align-self: center;
   text-align: center;
   margin-top: 4rem;
-  margin-bottom: 4em;
-  font-size: 2rem;
+  margin-bottom: 1em;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 .header__menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 1rem;
 }
 .header__menu-box {
   width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.5rem 1.5rem;
+  padding: 1rem 0.5rem;
+  margin: 0.5rem;
+  background-color: #fff;
+  border: 1px solid rgba(61, 61, 61, 0.2);
+  box-shadow: 0 3px 5px rgba(61, 61, 61, 0.2392156863);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border 0.3s, transform 0.3s;
+}
+.header__menu-box:hover {
+  transform: scale(1.1);
+  border: 1px solid rgba(47, 133, 185, 0.8);
 }
 .header__menu-box-meal {
   width: 8rem;
@@ -508,6 +524,30 @@ template {
 }
 .header__menu-box-text {
   font-size: 2rem;
+  font-weight: bold;
+}
+
+.cart__shopping {
+  position: absolute;
+  width: 80vw;
+  height: 60vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid rgba(61, 61, 61, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(61, 61, 61, 0.2392156863);
+  display: none;
+}
+.cart__shopping-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
+.cart__shopping-box .fa-xmark {
+  font-size: 3rem;
 }
 
 html {
@@ -523,6 +563,20 @@ p {
   margin: 0;
 }
 
+@media (max-width: 356px) {
+  .header__menu-box {
+    width: 60%;
+  }
+
+  .header__welcome {
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .nav__info-h3 {
+    font-size: 3.5rem;
+  }
+}
 @media (min-width: 768px) {
   .welcome__box-background {
     background-image: url("../img/welcome background/bgc-welcome-big.jpg");
@@ -530,6 +584,14 @@ p {
 
   .welcome__box-form {
     width: 40rem;
+  }
+
+  .header__menu-box {
+    width: 27%;
+  }
+
+  .fa-cart-shopping {
+    font-size: 5rem;
   }
 }
 @media (min-width: 992px) {

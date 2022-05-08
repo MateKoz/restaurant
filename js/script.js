@@ -1,11 +1,12 @@
-// confirm name and set form to display none
-
 const confirmWelcomeBtn = document.querySelector('.welcome__form-btn');
 const welcomeBox = document.querySelector(".welcome__box");
 const inputWelcome = document.querySelector(".welcome__form-input");
 const personName = document.querySelector('.header__name-input');
 const errorInputWelcome = document.querySelector('.welcome__form-input-error');
+const cartShop = document.querySelector(".nav__info-right");
+const menuDishes = document.querySelector('.cart__shopping')
 
+// confirm name and set form to display none. localstorage for name in input.
 
 const confirmName = (e) => {
     e.preventDefault();
@@ -28,7 +29,20 @@ const showName = () => {
 }
 showName();
 
+//function opens the list of selected dishes after clicking on the cart in the navigation;
 
+const showMenu = () => {
+    if (menuDishes.style.display === 'block') {
+        menuDishes.style.display = 'none'
+    } else {
+        menuDishes.style.display = 'block'
+    }
+}
+
+
+//listener
+
+cartShop.addEventListener('click', showMenu)
 confirmWelcomeBtn.addEventListener('click', confirmName);
 
 

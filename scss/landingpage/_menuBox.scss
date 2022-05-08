@@ -1,0 +1,25 @@
+.cart__shopping {
+  position: absolute;
+  width: 80vw;
+  height: 60vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid rgba(61, 61, 61, 0.20);
+  border-radius: 10px;
+  box-shadow: 0 3px 5px #3d3d3d3d;
+  display: none;
+
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+
+    .fa-xmark {
+      font-size: 3rem;
+    }
+  }
+}
+
