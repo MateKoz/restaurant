@@ -59,11 +59,11 @@ const pizza = [
 ];
 
 const burger = [
-    {name: `Salami2`, price: 232, ingredients: 'Salami, ser, papryka, 2'},
-    {name: `Capricosa2`, price: 222, ingredients: 'Ser, pieczarki, szynka, 2'},
-    {name: `Hawajska2`, price: 212, ingredients: 'Ser, kurczak, ananas, kukurydza, 2 '},
-    {name: `Margerita2`, price: 132, ingredients: 'Sos, ser, pomidory, 2'},
-    {name: `4 Sery2`, price: 32, ingredients: 'Ser feta, gorgonzola, plesniowy, cheddar, 2'}
+    {name: `burger1`, price: 2332, ingredients: 'Salami, ser, papryka, 2'},
+    {name: `burger2`, price: 223212, ingredients: 'Ser, pieczarki, szynka, 2'},
+    {name: `burger3`, price: 213212, ingredients: 'Ser, kurczak, ananas, kukurydza, 2 '},
+    {name: `burger4`, price: 133212, ingredients: 'Sos, ser, pomidory, 2'},
+    {name: `burger5`, price: 33232, ingredients: 'Ser feta, gorgonzola, plesniowy, cheddar, 2'}
 ];
 
 burger.forEach(item => console.log(item.name));
