@@ -59,9 +59,10 @@
 
 <!--meal cards-->
 <!--meal cards-->
-<header class="header wrapper">
+<header class="header">
+    <div class="bgc-shadow"></div>
     <p class="header__welcome">Witaj <span class="header__name-input"></span>,<br> na co masz dziś ochotę?</p>
-    <div class="header__menu">
+    <div class="header__menu wrapper">
         <div class="header__menu-box">
             <img src="img/landingpage/menu%20icon/cheese-burger.png" alt="burger icon" class="header__menu-box-meal">
             <p class="header__menu-box-text">Burger</p>
@@ -99,13 +100,59 @@
 </header>
 
 <section class="cart__shopping">
+    <i class="fa-solid fa-xmark"></i>
+    <h3 class="cart__shopping-box-h3">Twoj koszyk</h3>
     <div class="cart__shopping-box">
-        <h3 class="cart__shopping-box-h3">Twoj koszyk</h3>
-        <i class="fa-solid fa-xmark"></i>
+
+        <div class="menu__list">
+            <div class="left__box">
+                <label>
+                    <input type="number" value="1" class="menu__list-number">
+                </label>
+                <div class="menu__list-name">Pizza Salami</div>
+            </div>
+            <div class="right__box">
+                <p class="menu__list-price">32.25 zł</p>
+                <img src="img/landingpage/salami.jpg" alt="salami pizza image" class="menu-list-img">
+                <i class="fa-solid fa-trash-can"></i>
+            </div>
+        </div>
+
+        <div class="menu__list">
+            <div class="left__box">
+                <label>
+                    <input type="number" value="1" class="menu__list-number">
+                </label>
+                <div class="menu__list-name">Pizza Salami</div>
+            </div>
+            <div class="right__box">
+                <p class="menu__list-price">32.25 zł</p>
+                <img src="img/landingpage/salami.jpg" alt="salami pizza image" class="menu-list-img">
+                <i class="fa-solid fa-trash-can"></i>
+            </div>
+        </div>
+
+        <div class="menu__list">
+            <div class="left__box">
+                <label>
+                    <input type="number" value="1" class="menu__list-number">
+                </label>
+                <div class="menu__list-name">Pizza Salami</div>
+            </div>
+            <div class="right__box">
+                <p class="menu__list-price">32.25 zł</p>
+                <img src="img/landingpage/salami.jpg" alt="salami pizza image" class="menu-list-img">
+                <i class="fa-solid fa-trash-can"></i>
+            </div>
+        </div>
+        <div class="sum__price">
+            <p class="sum__price-p">Razem</p>
+            <span class="sum__price-span">199 zł</span>
+        </div>
     </div>
-
-    <button>Przejdz do podsmowania</button>
-
+    <div class="btn__box">
+        <button class="cart__shopping-btn blue__btn">Przejdz do podsumowania</button>
+    </div>
 </section>
 
 <script src="js/script.js"></script>

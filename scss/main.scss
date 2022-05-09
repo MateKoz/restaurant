@@ -13,6 +13,7 @@ html {
 body {
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
+  height: 100vh;
 }
 
 p {
@@ -43,15 +44,33 @@ p {
     width: 40rem;
   }
   .header__menu-box {
-    width: 27%;
+    width: 40%;
   }
   .fa-cart-shopping {
     font-size: 5rem;
+  }
+  .cart__shopping {
+    .cart__shopping-box-h3 {
+      font-size: 3rem;
+    }
+
+    .cart__shopping-box {
+      width: 70rem;
+    }
+  }
+  .header__welcome {
+    font-size: 3rem;
   }
 }
 
 @media(min-width: 992px) {
   .welcome__box-form {
     width: 50rem;
+  }
+  .header__welcome {
+    font-size: 4rem;
+  }
+  .header__menu-box {
+    width: 40%;
   }
 }

@@ -1,25 +1,137 @@
+@import "../colors";
+
+
 .cart__shopping {
   position: absolute;
-  width: 80vw;
-  height: 60vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border: 1px solid rgba(61, 61, 61, 0.20);
   border-radius: 10px;
-  box-shadow: 0 3px 5px #3d3d3d3d;
+  box-shadow: 0 3px 5px #3d3d3d;
   display: none;
 
+  &-box-h3 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+
+  .fa-xmark {
+    position: absolute;
+    font-size: 2.4rem;
+    padding: 1.5rem;
+    right: 0;
+    top: -10px;
+  }
+
   &-box {
+    width: 90vw;
+    min-width: 26rem;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     margin: 0 1rem;
+    z-index: 100;
 
-    .fa-xmark {
-      font-size: 3rem;
+    .menu__list {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 2rem;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        height: 2px;
+        background-color: $main-first-blue;
+        opacity: 0.3;
+
+      }
+
+      .left__box, .right__box {
+        display: flex;
+        align-items: center;
+
+        .menu__list-number {
+          width: 3rem;
+          padding: 0.5rem 0.5rem;
+          margin-right: 1rem;
+          font-size: 1.6rem;
+          border: 1px solid $text-color;
+          border-radius: 10px;
+          text-align: center;
+
+          &:hover, &:focus {
+            border: 1px solid $main-blue;
+            outline: $main-blue;
+          }
+        }
+
+        input[type='number'] {
+          -moz-appearance:textfield;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
+
+        .menu__list-name {
+          font-size: 1.6rem;
+          font-weight: bold;
+        }
+
+        .menu-list-img {
+          border-radius: 10px;
+          height: 6rem;
+          width: 6rem;
+        }
+
+        .menu__list-price {
+          font-size: 1.6rem;
+          font-weight: bold;
+          margin-right: 1rem;
+          padding-left: 0.5rem;
+        }
+
+        .fa-trash-can {
+          margin: 0.5rem;
+          color: $main-blue;
+        }
+      }
     }
   }
-}
 
+  .sum__price {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+    font-weight: bold;
+
+    .sum__price-p {
+      margin-left: 5rem;
+      font-size: 2rem;
+    }
+
+    .sum__price-span {
+      margin-right: 9rem;
+      font-size: 2rem;
+    }
+  }
+
+  .btn__box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+}
