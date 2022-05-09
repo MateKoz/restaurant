@@ -1,0 +1,94 @@
+@import "../colors";
+
+.menu__options {
+  position: absolute;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  background-color: #fff;
+  //display: none;
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+
+    &-meal {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  &-dishes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    margin-top: 2.5rem;
+
+    .menu__option_dish {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        height: 2px;
+        background-color: $main-first-blue;
+        opacity: 0.3;
+
+      }
+    }
+
+    .dish__left-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+
+      .dish__left-box-ingredients {
+        text-transform: inherit;
+        margin-bottom: 1rem;
+        padding-right: 2rem;
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      .dish__left-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        justify-content: space-between;
+
+        .dish__left-box-name {
+          font-size: 1.8rem;
+          font-weight: bolder;
+        }
+
+        .dish__right-box-price {
+          margin-right: 2rem;
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    .dish__right-box {
+
+      &-img {
+        height: 14rem;
+        width: 14rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
