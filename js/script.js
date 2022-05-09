@@ -49,6 +49,15 @@ confirmWelcomeBtn.addEventListener('click', confirmName);
 cancelBoxMenu.addEventListener("click", disableCarts)
 
 
+const object = [
+    {name: `Mateusz`, age: 23, location: 'Rzeszów'},
+    {name: `Michal`, age: 22, location: 'Warszawa'},
+    {name: `Agata`, age: 21, location: 'Gdansk'},
+    {name: `Barni`, age: 13, location: 'Rzeszów'},
+    {name: `Mieszko`, age: 3, location: 'Rzeszów'}
+];
+
+
 
 
 

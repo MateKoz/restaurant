@@ -5,6 +5,7 @@
 @import "landingpage/nav";
 @import "landingpage/header";
 @import "landingpage/menuBox";
+@import "landingpage/headerMenuOptions";
 
 html {
   font-size: 62.5%;
@@ -69,6 +70,8 @@ p {
   }
   .header__welcome {
     font-size: 4rem;
+    margin-bottom: 0;
+    margin-top: 2rem;
   }
   .header__menu-box {
     width: 40%;
