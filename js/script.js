@@ -27,7 +27,6 @@ const showName = () => {
     if (nameFromStorage != null) {
         welcomeBox.style.display = 'none';
     }
-
 }
 showName();
 
@@ -41,9 +40,7 @@ const showMenu = () => {
 const disableCarts = () => {
     menuDishes.style.display = 'none';
     shadowCarts.style.display = 'none';
-
 }
-
 
 //listener
 
