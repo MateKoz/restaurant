@@ -49,14 +49,24 @@ confirmWelcomeBtn.addEventListener('click', confirmName);
 cancelBoxMenu.addEventListener("click", disableCarts)
 
 
-const object = [
-    {name: `Mateusz`, age: 23, location: 'Rzeszów'},
-    {name: `Michal`, age: 22, location: 'Warszawa'},
-    {name: `Agata`, age: 21, location: 'Gdansk'},
-    {name: `Barni`, age: 13, location: 'Rzeszów'},
-    {name: `Mieszko`, age: 3, location: 'Rzeszów'}
+
+const pizza = [
+    {name: `Salami`, price: 23, ingredients: 'Salami, ser, papryka'},
+    {name: `Capricosa`, price: 22, ingredients: 'Ser, pieczarki, szynka'},
+    {name: `Hawajska`, price: 21, ingredients: 'Ser, kurczak, ananas, kukurydza'},
+    {name: `Margerita`, price: 13, ingredients: 'Sos, ser, pomidory'},
+    {name: `4 Sery`, price: 3, ingredients: 'Ser feta, gorgonzola, plesniowy, cheddar'}
 ];
 
+const burger = [
+    {name: `Salami2`, price: 232, ingredients: 'Salami, ser, papryka, 2'},
+    {name: `Capricosa2`, price: 222, ingredients: 'Ser, pieczarki, szynka, 2'},
+    {name: `Hawajska2`, price: 212, ingredients: 'Ser, kurczak, ananas, kukurydza, 2 '},
+    {name: `Margerita2`, price: 132, ingredients: 'Sos, ser, pomidory, 2'},
+    {name: `4 Sery2`, price: 32, ingredients: 'Ser feta, gorgonzola, plesniowy, cheddar, 2'}
+];
+
+burger.forEach(item => console.log(item.name));
 
 
 
