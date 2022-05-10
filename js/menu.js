@@ -143,7 +143,7 @@ const showDish = (e) => {
                 </div>
             <div class="underline"></div>
             `
-        } else if (item.type === 'drinks' && idName !== 'cake') {
+        } else if (item.type === 'drinks' && idName === 'drinks') {
             let dish = document.createElement('div');
             listDish.append(dish);
             dish.classList.add("menu__options-dishes")
