@@ -42,8 +42,14 @@
 }
 
 .underline {
-  height: 1px;
+  height: 2px;
   width: 90%;
   background-color: $main-blue;
-  margin: 0 auto;
+  opacity: .2;
+  margin: 1rem auto 0;
+
+}
+
+.hidden {
+  display: none;
 }

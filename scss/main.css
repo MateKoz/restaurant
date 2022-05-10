@@ -461,10 +461,15 @@ template {
 }
 
 .underline {
-  height: 1px;
+  height: 2px;
   width: 90%;
   background-color: rgba(47, 133, 185, 0.8);
-  margin: 0 auto;
+  opacity: 0.2;
+  margin: 1rem auto 0;
+}
+
+.hidden {
+  display: none;
 }
 
 .nav {
@@ -709,6 +714,7 @@ template {
   flex-direction: column;
   align-items: center;
   padding: 1rem 1.5rem;
+  background-color: #fff;
 }
 .menu__options-dishes .menu__option_dish {
   position: relative;
@@ -716,6 +722,7 @@ template {
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-width: 28rem;
   margin-top: 1rem;
 }
 .menu__options-dishes .dish__left-main {
@@ -751,6 +758,7 @@ template {
   height: 12rem;
   width: 12rem;
   border-radius: 1rem;
+  border: 1px solid rgba(47, 133, 185, 0.8);
 }
 
 html {
