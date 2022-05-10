@@ -31,7 +31,13 @@ const dishes = [
         img: "double"
     },
 
-    {name: `Salami`, type: "pizza", price: 32, ingredients: 'ser, salami, jalapeno', img: "salami"},
+    {
+        name: `Salami`,
+        type: "pizza",
+        price: 32,
+        ingredients: 'ser, salami, jalapeno',
+        img: "salami"
+    },
     {name: `Capriciosa`, type: "pizza", price: 34, ingredients: 'Ser, pieczarki, szynka', img: "capriciosa"},
     {name: `Hawajska`, type: "pizza", price: 37, ingredients: 'Ser, kurczak, ananas, kukurydza', img: "hawajska"},
     {name: `Margerita`, type: "pizza", price: 29, ingredients: 'ser, pomidory, bazylia', img: "margerita"},
@@ -85,11 +91,8 @@ const dishes = [
     {name: `Aglio olio`, type: "vege", price: 27, ingredients: 'ser, czosnek, oliwa', img: "aglio"},
     {name: `Sałatka z brokułem `, type: "vege", price: 24, ingredients: 'ser, pomidory, bazylia', img: "broccoli"},
     {
-        name: `Vege Burger`,
-        type: "vege",
-        price: 28,
-        ingredients: 'bułka, ser wegański, burger z ciecierzycy, sałata, ogórek, pomidor',
-        img: "vegan"
+        name: `Vege Burger`, type: "vege", price: 28,
+        ingredients: 'bułka, ser wegański, burger z ciecierzycy, sałata, ogórek, pomidor', img: "vegan"
     },
 
     {name: `Kawa`, type: "drinks", price: 10, img: "coffee"},
@@ -99,11 +102,38 @@ const dishes = [
     {name: `Woda `, type: "drinks", price: 7, img: "water"},
     {name: `Koktajl `, type: "drinks", price: 31, img: "cocktail"},
 
-    {name: `Beza Pavlova `, type: "cake", ingredients:"beza, owoce, krem śmietanowy", price: 21, img: "pavlova"},
-    {name: `Tort czekoladowy `, type: "cake", ingredients:"biszkopt, krem czekoladowy, czekolada, wiśnie ", price: 21, img: "chocolate-cake"},
-    {name: `Szarlotka `, type: "cake", ingredients:"biszkopt, jabłko, cukier puder", price: 22, img: "apple-pie"},
-    {name: `Sernik `, type: "cake", ingredients:"ciasto, ser, sos z marakui", price: 23, img: "cheesecake"},
-    {name: `Tort owocowy `, type: "cake", ingredients:"ciasto, krem, truskawka, borówka, banan", price: 27, img: "fruits-cake"},
+    {
+        name: `Beza Pavlova `, type: "cake",
+        ingredients: "beza, owoce, krem śmietanowy", price: 21, img: "pavlova"
+    },
+    {
+        name: `Tort czekoladowy `,
+        type: "cake",
+        ingredients: "biszkopt, krem czekoladowy, czekolada, wiśnie ",
+        price: 21,
+        img: "chocolate-cake"
+    },
+    {
+        name: `Szarlotka `,
+        type: "cake",
+        ingredients: "biszkopt, jabłko, cukier puder",
+        price: 22,
+        img: "apple-pie"
+    },
+    {
+        name: `Sernik `,
+        type: "cake",
+        ingredients: "ciasto, ser, sos z marakui",
+        price: 23,
+        img: "cheesecake"
+    },
+    {
+        name: `Tort owocowy `,
+        type: "cake",
+        ingredients: "ciasto, krem, truskawka, borówka, banan",
+        price: 27,
+        img: "fruits-cake"
+    },
 
 ];
 

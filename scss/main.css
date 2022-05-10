@@ -531,6 +531,7 @@ template {
   width: 100%;
   height: 100%;
   display: none;
+  z-index: 10;
 }
 .header__welcome {
   align-self: center;
@@ -578,6 +579,7 @@ template {
   border-radius: 10px;
   box-shadow: 0 3px 5px #3d3d3d;
   display: none;
+  z-index: 10;
 }
 .cart__shopping-box-h3 {
   font-size: 2.4rem;
