@@ -50,23 +50,6 @@ cancelBoxMenu.addEventListener("click", disableCarts)
 
 
 
-const pizza = [
-    {name: `Salami`, price: 23, ingredients: 'Salami, ser, papryka'},
-    {name: `Capricosa`, price: 22, ingredients: 'Ser, pieczarki, szynka'},
-    {name: `Hawajska`, price: 21, ingredients: 'Ser, kurczak, ananas, kukurydza'},
-    {name: `Margerita`, price: 13, ingredients: 'Sos, ser, pomidory'},
-    {name: `4 Sery`, price: 3, ingredients: 'Ser feta, gorgonzola, plesniowy, cheddar'}
-];
-
-const burger = [
-    {name: `burger1`, price: 2332, ingredients: 'Salami, ser, papryka, 2'},
-    {name: `burger2`, price: 223212, ingredients: 'Ser, pieczarki, szynka, 2'},
-    {name: `burger3`, price: 213212, ingredients: 'Ser, kurczak, ananas, kukurydza, 2 '},
-    {name: `burger4`, price: 133212, ingredients: 'Sos, ser, pomidory, 2'},
-    {name: `burger5`, price: 33232, ingredients: 'Ser feta, gorgonzola, plesniowy, cheddar, 2'}
-];
-
-burger.forEach(item => console.log(item.name));
 
 
 

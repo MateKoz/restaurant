@@ -460,6 +460,13 @@ template {
   border-radius: 13px;
 }
 
+.underline {
+  height: 1px;
+  width: 90%;
+  background-color: rgba(47, 133, 185, 0.8);
+  margin: 0 auto;
+}
+
 .nav {
   width: 100%;
   height: 8rem;
@@ -523,7 +530,7 @@ template {
 .header__welcome {
   align-self: center;
   text-align: center;
-  margin-top: 2rem;
+  margin: 3rem 0;
   font-size: 2.5rem;
   font-weight: bold;
 }
@@ -534,30 +541,26 @@ template {
   margin-top: 0.5rem;
 }
 .header__menu-box {
-  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 40%;
   padding: 1rem 0.5rem;
   margin: 0.5rem;
-  background-color: #fff;
   border: 1px solid rgba(61, 61, 61, 0.2);
   box-shadow: 0 3px 5px rgba(61, 61, 61, 0.2392156863);
   border-radius: 10px;
   cursor: pointer;
-  transition: border 0.3s, transform 0.3s;
-}
-.header__menu-box:hover {
-  transform: scale(1.1);
-  border: 1px solid rgba(47, 133, 185, 0.8);
 }
 .header__menu-box-meal {
   width: 8rem;
   height: 8rem;
+  z-index: -10;
 }
 .header__menu-box-text {
   font-size: 2rem;
   font-weight: bold;
+  z-index: -10;
 }
 
 .cart__shopping {
@@ -682,49 +685,44 @@ template {
   position: absolute;
   width: 100%;
   max-width: 1200px;
-  height: 100vh;
   background-color: #fff;
   display: none;
+  padding-bottom: 2rem;
 }
 .menu__options-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 .menu__options-main-meal {
   width: 8rem;
   height: 8rem;
 }
+.menu__options-main-text {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+}
 .menu__options-dishes {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 1rem 1.5rem;
-  margin-top: 2.5rem;
 }
 .menu__options-dishes .menu__option_dish {
   position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
-}
-.menu__options-dishes .menu__option_dish:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 95%;
-  height: 2px;
-  background-color: rgb(47, 133, 185);
-  opacity: 0.3;
+  width: 100%;
+  margin-top: 1rem;
 }
 .menu__options-dishes .dish__left-main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 70%;
 }
 .menu__options-dishes .dish__left-main .dish__left-box-ingredients {
   text-transform: inherit;
@@ -746,11 +744,12 @@ template {
 }
 .menu__options-dishes .dish__left-main .dish__left-box .dish__right-box-price {
   margin-right: 2rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .menu__options-dishes .dish__right-box-img {
-  height: 14rem;
-  width: 14rem;
+  height: 12rem;
+  width: 12rem;
   border-radius: 1rem;
 }
 
