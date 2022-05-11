@@ -458,6 +458,11 @@ template {
   background-color: rgba(47, 133, 185, 0.8);
   padding: 0.5rem 2rem;
   border-radius: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn__dish:hover {
+  transform: scale(1.1);
 }
 
 .underline {
@@ -506,7 +511,7 @@ template {
 .nav__info-shop-price {
   position: relative;
   font-weight: bolder;
-  font-size: 1rem;
+  font-size: 1.3rem;
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
@@ -570,6 +575,9 @@ template {
 }
 
 .cart__shopping {
+  width: 80%;
+  max-width: 50rem;
+  min-width: 27rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -595,14 +603,29 @@ template {
   cursor: pointer;
 }
 .cart__shopping-box {
-  width: 90vw;
-  min-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 100;
+}
+.cart__shopping-box-dish {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
+  padding: 1rem 0.3rem;
   margin: 0 1rem;
-  z-index: 100;
+}
+.cart__shopping-box-dish .box-dish-name {
+  padding-right: 4rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.cart__shopping-box-dish .box-dish-price {
+  font-size: 2rem;
+}
+.cart__shopping-box-dish .box-dish-underline {
+  width: 80%;
+  height: 3px;
+  background-color: rgba(47, 133, 185, 0.8);
 }
 .cart__shopping-box .menu__list {
   position: relative;
@@ -667,27 +690,30 @@ template {
   color: rgba(47, 133, 185, 0.8);
 }
 .cart__shopping .sum__price {
+  position: relative;
   display: flex;
   width: 100%;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: center;
   font-weight: bold;
+  margin: 1rem 0;
+}
+.cart__shopping .sum__price:after {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 1px;
+  background-color: rgba(47, 133, 185, 0.8);
+  opacity: 0.4;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .cart__shopping .sum__price .sum__price-p {
-  margin-left: 5rem;
   font-size: 2rem;
 }
 .cart__shopping .sum__price .sum__price-span {
-  margin-right: 9rem;
   font-size: 2rem;
 }
-.cart__shopping .btn__box {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 1.5rem 0;
-}
-
 .menu__options {
   position: absolute;
   width: 100%;
@@ -810,9 +836,6 @@ p {
 
   .cart__shopping .cart__shopping-box-h3 {
     font-size: 3rem;
-  }
-  .cart__shopping .cart__shopping-box {
-    width: 70rem;
   }
 
   .header__welcome {

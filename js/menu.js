@@ -1,5 +1,7 @@
 const iconDish = document.querySelectorAll(".header__menu-box");
 const listDish = document.querySelector('.menu__options');
+let arrPrice = [];
+console.log(arrPrice)
 
 const dishes = [
     {
@@ -160,11 +162,11 @@ const showDish = (e) => {
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
-                            <p class="dish__left-box-name">${item.name}</p>
+                            <p class="dish__left-box-name" >${item.name}</p>
                             <p class="dish__right-box-price">${item.price} zł</p>
                         </div>
                         <p class="dish__left-box-ingredients"><span>Skład: </span>${item.ingredients}</p>
-                        <button class="btn__dish">dodaj</button>
+                        <button class="btn__dish" data-name="${item.name}" data-price="${item.price}">dodaj</button>
                     </div>
                     <div class="dish__right-box">
                         <img src="img/landingpage/dishes/${idName}/${item.img}.jpg" alt="${item.name}"
@@ -184,7 +186,7 @@ const showDish = (e) => {
                             <p class="dish__left-box-name">${item.name}</p>
                             <p class="dish__right-box-price">${item.price} zł</p>
                         </div>
-                        <button class="btn__dish">dodaj</button>
+                        <button class="btn__dish" data-name="${item.name}" data-price="${item.price}">dodaj</button>
                     </div>
                     <div class="dish__right-box">
                         <img src="img/landingpage/dishes/${idName}/${item.img}.jpg" alt="${item.name}"
@@ -195,6 +197,40 @@ const showDish = (e) => {
             `
         }
     });
+
+    const allBtnPrice = document.querySelectorAll('.btn__dish');
+    const cartShoppingBox = document.querySelector('.cart__shopping-box');
+    const sumPriceCarts = document.querySelector('.sum__price-span');
+    const sumPriceText = document.querySelector('.sum__price-p')
+
+
+    const showPrice = (e) => {
+        let dishCart = document.createElement('div');
+        dishCart.classList.add('cart__shopping-box-dish');
+        cartShoppingBox.append(dishCart);
+        dishCart.innerHTML = `
+            <p class="box-dish-name">${e.target.dataset.name}</p>
+            <p class="box-dish-price">${e.target.dataset.price} zł</p>
+        `;
+
+        let priceDish = (e.target.dataset.price) * 1;
+        arrPrice.push(priceDish);
+        let sumArrPrice = arrPrice.reduce(function (prev, curr) {
+            return prev + curr
+        });
+        sumPriceText.textContent = 'Razem :';
+        sumPriceText.style.paddingRight = `3rem`;
+        navInfoPrice.textContent = `( ${sumArrPrice} złote. )`;
+        sumPriceCarts.textContent = `${sumArrPrice} złotych`;
+    }
+
+    allBtnPrice.forEach(item => item.addEventListener('click', showPrice))
+    const navInfoPrice = document.querySelector('.nav__info-shop-price');
+
+    if (arrPrice.length === 0) {
+        navInfoPrice.textContent = 'Koszyk pusty';
+    }
 }
+
 
 iconDish.forEach(item => item.addEventListener('click', showDish))
