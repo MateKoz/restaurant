@@ -211,23 +211,35 @@ const showDish = (e) => {
     const sumPriceCarts = document.querySelector('.sum__price-span');
     const sumPriceText = document.querySelector('.sum__price-p');
     const navInfoPrice = document.querySelector('.nav__info-shop-price');
+    const btnBack = document.querySelector('.menu__options-main-btn');
 
-//the function adds items to the card with the given name and price
+
+
+    //the function adds items to the card with the given name and price
     const showPrice = (e) => {
+
         let dishCart = document.createElement('div');
         dishCart.classList.add('cart__shopping-box-dish');
         cartShoppingBox.append(dishCart);
         dishCart.innerHTML = `
-            <div class="box-dish">
+            <span class="box-dish">
                 <i class="fa-solid fa-trash-can"></i>
                 <p class="box-dish-name">${e.target.dataset.name}</p>
-            </div>
+            </span>
             <p class="box-dish-price">${e.target.dataset.price} zł</p>
         `;
+
+        //function to remove a dish from the cart
+        const allTrash = document.querySelectorAll('.fa-trash-can')
+
+        const deleteDish = e => {
+            console.log(e.target.closest('div'))
+        }
 
         //we add the given value "price" to the empty array, then sum the entire array and put it under the given variable
         let priceDish = (e.target.dataset.price) * 1;
         arrPrice.push(priceDish);
+
         let sumArrPrice = arrPrice.reduce(function (prev, curr) {
             return prev + curr
         });
@@ -235,24 +247,20 @@ const showDish = (e) => {
         sumPriceText.textContent = 'Razem :';
         sumPriceText.style.paddingRight = `3rem`;
         sumPriceCarts.textContent = `${sumArrPrice} zł`;
-
         navInfoPrice.textContent = `( ${sumArrPrice} zł )`;
+
+        allTrash.forEach(item => item.addEventListener('click', deleteDish));
     }
-    allBtnPrice.forEach(item => item.addEventListener('click', showPrice));
 
-    //back to main menu
-    const btnBack = document.querySelector('.menu__options-main-btn');
-
+    //function which takes us back to the main menu after clicking the "powrót" button
     const backToMenu = () => {
-        console.log('wracamy do menu');
-        listDish.style.display = 'none';
-        iconDish.forEach(item => item.style.display = 'flex')
-
+        listDishAll.forEach(item => item.style.display = 'none');
+        iconDish.forEach(item => item.style.display = 'flex');
+        listDish.innerHTML = '';
     }
 
+    allBtnPrice.forEach(item => item.addEventListener('click', showPrice));
     btnBack.addEventListener('click', backToMenu);
-
 }
-
 
 iconDish.forEach(item => item.addEventListener('click', showDish))
