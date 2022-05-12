@@ -140,14 +140,11 @@ const dishes = [
 ];
 
 const showDish = (e) => {
-
     let idName = e.target.dataset.name
     listDish.style.display = 'block';
     let title = document.createElement('div');
     title.classList.add('menu__options-main');
     listDish.append(title);
-
-    //icon in main menu display none;
     iconDish.forEach(item => item.style.display = 'none')
 
     title.innerHTML = `
@@ -158,13 +155,12 @@ const showDish = (e) => {
     `
 
     // we dynamically add all the dishes from the dishes array
-    const functionDish = () => {
-        dishes.forEach(item => {
-            if (idName === item.type && idName !== 'drinks') {
-                let dish = document.createElement('div');
-                listDish.append(dish);
-                dish.classList.add("menu__options-dishes")
-                dish.innerHTML = `      
+    dishes.forEach(item => {
+        if (idName === item.type && idName !== 'drinks') {
+            let dish = document.createElement('div');
+            listDish.append(dish);
+            dish.classList.add("menu__options-dishes")
+            dish.innerHTML = `      
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
@@ -181,11 +177,11 @@ const showDish = (e) => {
                 </div>
             <div class="underline"></div>
             `
-            } else if (item.type === 'drinks' && idName === 'drinks') {
-                let dish = document.createElement('div');
-                listDish.append(dish);
-                dish.classList.add("menu__options-dishes")
-                dish.innerHTML = `      
+        } else if (item.type === 'drinks' && idName === 'drinks') {
+            let dish = document.createElement('div');
+            listDish.append(dish);
+            dish.classList.add("menu__options-dishes")
+            dish.innerHTML = `      
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
@@ -201,10 +197,8 @@ const showDish = (e) => {
                 </div>
             <div class="underline"></div>
             `
-            }
-        });
-    }
-    functionDish();
+        }
+    });
 
     const allBtnPrice = document.querySelectorAll('.btn__dish');
     const cartShoppingBox = document.querySelector('.cart__shopping-box');
@@ -216,7 +210,6 @@ const showDish = (e) => {
 
     //the function adds items to the card with the given name and price
     const showPrice = (e) => {
-
 
         let dishPriceInCart = e.target.dataset.price;
         console.log(dishPriceInCart)
@@ -243,7 +236,6 @@ const showDish = (e) => {
         sumPriceText.style.paddingRight = `3rem`;
         sumPriceCarts.textContent = `${sumArrPrice} zł`;
         navInfoPrice.textContent = `( ${sumArrPrice} zł )`;
-
     }
 
     //function which takes us back to the main menu after clicking the "powrót" button
