@@ -14,10 +14,15 @@
     align-items: center;
     margin: 1rem 0;
 
+    &-btn {
+      margin-top: 3rem;
+    }
+
     &-meal {
       width: 8rem;
       height: 8rem;
     }
+
     &-text {
       text-transform: uppercase;
       font-weight: bold;
@@ -38,7 +43,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      min-width: 28rem;
+      min-width: 24rem;
       margin-top: 1rem;
     }
 

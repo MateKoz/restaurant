@@ -47,6 +47,20 @@
   }
 }
 
+.btn__dish-back {
+  width: 10rem;
+  border: none;
+  background-color: $main-blue;
+  padding: 0.5rem 2rem;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 .underline {
   height: 2px;
   width: 90%;

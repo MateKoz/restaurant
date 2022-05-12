@@ -2,7 +2,7 @@
 
 
 .cart__shopping {
-  width: 80%;
+  width: 90%;
   max-width: 50rem;
   min-width: 27rem;
   position: absolute;
@@ -36,6 +36,15 @@
     flex-direction: column;
     width: 100%;
     z-index: 100;
+
+    .box-dish {
+      display: flex;
+      align-items: center;
+
+      .fa-trash-can {
+        padding: 1rem;
+      }
+    }
 
     &-dish {
       display: flex;

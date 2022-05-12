@@ -1,8 +1,8 @@
 const iconDish = document.querySelectorAll(".header__menu-box");
 const listDish = document.querySelector('.menu__options');
-let arrPrice = [];
-console.log(arrPrice)
+const listDishAll = document.querySelectorAll('.menu__options');
 
+let arrPrice = [];
 const dishes = [
     {
         name: `Chicken Burger`,
@@ -140,25 +140,31 @@ const dishes = [
 ];
 
 const showDish = (e) => {
+
     let idName = e.target.dataset.name
     listDish.style.display = 'block';
     let title = document.createElement('div');
-    title.classList.add('menu__options-main')
+    title.classList.add('menu__options-main');
     listDish.append(title);
+
+    //icon in main menu display none;
     iconDish.forEach(item => item.style.display = 'none')
 
     title.innerHTML = `
                 <img src="img/landingpage/menu%20icon/${idName}.png" alt="${idName} icon"
                      class="menu__options-main-meal">
                 <p class="menu__options-main-text">${idName}</p>
+                <button class="menu__options-main-btn btn__dish-back">Powrót</button>
     `
 
-    dishes.forEach(item => {
-        if (idName === item.type && idName !== 'drinks') {
-            let dish = document.createElement('div');
-            listDish.append(dish);
-            dish.classList.add("menu__options-dishes")
-            dish.innerHTML = `      
+    // we dynamically add all the dishes from the dishes array
+    const functionDish = () => {
+        dishes.forEach(item => {
+            if (idName === item.type && idName !== 'drinks') {
+                let dish = document.createElement('div');
+                listDish.append(dish);
+                dish.classList.add("menu__options-dishes")
+                dish.innerHTML = `      
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
@@ -175,11 +181,11 @@ const showDish = (e) => {
                 </div>
             <div class="underline"></div>
             `
-        } else if (item.type === 'drinks' && idName === 'drinks') {
-            let dish = document.createElement('div');
-            listDish.append(dish);
-            dish.classList.add("menu__options-dishes")
-            dish.innerHTML = `      
+            } else if (item.type === 'drinks' && idName === 'drinks') {
+                let dish = document.createElement('div');
+                listDish.append(dish);
+                dish.classList.add("menu__options-dishes")
+                dish.innerHTML = `      
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
@@ -195,41 +201,57 @@ const showDish = (e) => {
                 </div>
             <div class="underline"></div>
             `
-        }
-    });
+            }
+        });
+    }
+    functionDish();
 
     const allBtnPrice = document.querySelectorAll('.btn__dish');
     const cartShoppingBox = document.querySelector('.cart__shopping-box');
     const sumPriceCarts = document.querySelector('.sum__price-span');
-    const sumPriceText = document.querySelector('.sum__price-p')
+    const sumPriceText = document.querySelector('.sum__price-p');
+    const navInfoPrice = document.querySelector('.nav__info-shop-price');
 
-
+//the function adds items to the card with the given name and price
     const showPrice = (e) => {
         let dishCart = document.createElement('div');
         dishCart.classList.add('cart__shopping-box-dish');
         cartShoppingBox.append(dishCart);
         dishCart.innerHTML = `
-            <p class="box-dish-name">${e.target.dataset.name}</p>
+            <div class="box-dish">
+                <i class="fa-solid fa-trash-can"></i>
+                <p class="box-dish-name">${e.target.dataset.name}</p>
+            </div>
             <p class="box-dish-price">${e.target.dataset.price} zł</p>
         `;
 
+        //we add the given value "price" to the empty array, then sum the entire array and put it under the given variable
         let priceDish = (e.target.dataset.price) * 1;
         arrPrice.push(priceDish);
         let sumArrPrice = arrPrice.reduce(function (prev, curr) {
             return prev + curr
         });
+
         sumPriceText.textContent = 'Razem :';
         sumPriceText.style.paddingRight = `3rem`;
-        navInfoPrice.textContent = `( ${sumArrPrice} złote. )`;
-        sumPriceCarts.textContent = `${sumArrPrice} złotych`;
+        sumPriceCarts.textContent = `${sumArrPrice} zł`;
+
+        navInfoPrice.textContent = `( ${sumArrPrice} zł )`;
+    }
+    allBtnPrice.forEach(item => item.addEventListener('click', showPrice));
+
+    //back to main menu
+    const btnBack = document.querySelector('.menu__options-main-btn');
+
+    const backToMenu = () => {
+        console.log('wracamy do menu');
+        listDish.style.display = 'none';
+        iconDish.forEach(item => item.style.display = 'flex')
+
     }
 
-    allBtnPrice.forEach(item => item.addEventListener('click', showPrice))
-    const navInfoPrice = document.querySelector('.nav__info-shop-price');
+    btnBack.addEventListener('click', backToMenu);
 
-    if (arrPrice.length === 0) {
-        navInfoPrice.textContent = 'Koszyk pusty';
-    }
 }
 
 

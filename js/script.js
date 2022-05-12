@@ -9,7 +9,6 @@ const shadowCarts = document.querySelector(".bgc-shadow");
 const cancelBoxMenu = document.querySelector(".fa-xmark")
 
 // confirm name and set form to display none. localstorage for name in input.
-
 const confirmName = (e) => {
     e.preventDefault();
     let name = inputWelcome.value;
