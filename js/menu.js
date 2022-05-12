@@ -214,10 +214,12 @@ const showDish = (e) => {
     const btnBack = document.querySelector('.menu__options-main-btn');
 
 
-
     //the function adds items to the card with the given name and price
     const showPrice = (e) => {
 
+
+        let dishPriceInCart = e.target.dataset.price;
+        console.log(dishPriceInCart)
         let dishCart = document.createElement('div');
         dishCart.classList.add('cart__shopping-box-dish');
         cartShoppingBox.append(dishCart);
@@ -228,13 +230,6 @@ const showDish = (e) => {
             </span>
             <p class="box-dish-price">${e.target.dataset.price} zł</p>
         `;
-
-        //function to remove a dish from the cart
-        const allTrash = document.querySelectorAll('.fa-trash-can')
-
-        const deleteDish = e => {
-            console.log(e.target.closest('div'))
-        }
 
         //we add the given value "price" to the empty array, then sum the entire array and put it under the given variable
         let priceDish = (e.target.dataset.price) * 1;
@@ -249,7 +244,6 @@ const showDish = (e) => {
         sumPriceCarts.textContent = `${sumArrPrice} zł`;
         navInfoPrice.textContent = `( ${sumArrPrice} zł )`;
 
-        allTrash.forEach(item => item.addEventListener('click', deleteDish));
     }
 
     //function which takes us back to the main menu after clicking the "powrót" button
@@ -263,4 +257,4 @@ const showDish = (e) => {
     btnBack.addEventListener('click', backToMenu);
 }
 
-iconDish.forEach(item => item.addEventListener('click', showDish))
+iconDish.forEach(item => item.addEventListener('click', showDish));
