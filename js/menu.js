@@ -78,8 +78,8 @@ const showDish = (e) => {
 
     const addDish = e => {
         let dishCart = document.createElement('div')
-        dishCart.classList.add('cart__shopping-box-dish')
-        cartShoppingBox.append(dishCart)
+        dishCart.classList.add('cart__shopping-box-dish');
+        cartShoppingBox.append(dishCart);
         dishCart.innerHTML = `
         <span class="box-dish">
             <i class="fa-solid fa-trash-can"></i>
@@ -87,31 +87,46 @@ const showDish = (e) => {
         </span>
         <p class="box-dish-price">${e.target.dataset.price} zł</p>
     `
-
+        console.log(arrPrice)
         const priceDish = e.target.dataset.price * 1
         arrPrice.push(priceDish)
+        console.log(arrPrice)
 
-        const sumArrPrice = arrPrice.reduce(function (prev, curr) {
+
+        let sumArrPrice = arrPrice.reduce(function (prev, curr) {
             return prev + curr
         })
+        console.log(sumArrPrice)
+
         sumPriceText.textContent = 'Razem :'
         sumPriceText.style.paddingRight = `3rem`
-        sumPriceCarts.textContent = `${sumArrPrice} zł`
-        navInfoPrice.textContent = `( ${sumArrPrice} zł )`
+        sumPriceCarts.textContent = `${sumArrPrice}`
+        navInfoPrice.textContent = `${sumArrPrice}`
 
         const allTrashIcon = document.querySelectorAll('.fa-trash-can')
         allTrashIcon.forEach(item => item.addEventListener('click', deleteItem))
     }
 
     const deleteItem = e => {
-        let parent = e.target.parentElement.parentElement
+        let navInfoPrice = document.querySelector('.nav__info-shop-price');
+        console.log(navInfoPrice.textContent);
+        let priceNew = navInfoPrice.textContent;
+
+        let parent = e.target.parentElement.parentElement;
         let price = parseInt(parent.querySelector('.box-dish-price').textContent)
-        console.log(price);
+        console.log(arrPrice)
+        console.log(priceNew - price)
+        let newPrice = priceNew - price;
+        let sumArrPrice = newPrice
 
-        arrPrice.reduce(function (prev, curr) {
-            return prev + curr
-        });
+        const removedItem =  e.target.closest('div');
+        removedItem.remove();
 
+
+        sumPriceText.textContent = 'Razem :'
+        sumPriceText.style.paddingRight = `3rem`
+        sumPriceCarts.textContent = `${newPrice}`
+        navInfoPrice.textContent = `${newPrice}`
     }
 
     //function which takes us back to the main menu after clicking the "powrót" button
