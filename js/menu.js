@@ -1,8 +1,6 @@
 const iconDish = document.querySelectorAll(".header__menu-box");
 const listDish = document.querySelector('.menu__options');
-const listDishAll = document.querySelectorAll('.menu__options');
 
-let arrPrice = [];
 const dishes = [
     {
         name: `Chicken Burger`,
@@ -139,7 +137,10 @@ const dishes = [
 
 ];
 
+
+
 const showDish = (e) => {
+
     let idName = e.target.dataset.name
     listDish.style.display = 'block';
     let title = document.createElement('div');
@@ -154,21 +155,21 @@ const showDish = (e) => {
                 <button class="menu__options-main-btn btn__dish-back">Powrót</button>
     `
 
-    // we dynamically add all the dishes from the dishes array
     dishes.forEach(item => {
-        if (idName === item.type && idName !== 'drinks') {
-            let dish = document.createElement('div');
-            listDish.append(dish);
-            dish.classList.add("menu__options-dishes")
-            dish.innerHTML = `      
+            if (idName === item.type && idName !== 'drinks') {
+                let dish = document.createElement('div');
+                dish.classList.add("menu__options-dishes")
+                listDish.append(dish);
+
+                dish.innerHTML = `      
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
                             <p class="dish__left-box-name" >${item.name}</p>
                             <p class="dish__right-box-price">${item.price} zł</p>
                         </div>
-                        <p class="dish__left-box-ingredients"><span>Skład: </span>${item.ingredients}</p>
-                        <button class="btn__dish" data-name="${item.name}" data-price="${item.price}">dodaj</button>
+                        <p class="dish__left-box-ingredients">Skład: ${item.ingredients}</p>
+                        <button class="btn__dish">dodaj</button>
                     </div>
                     <div class="dish__right-box">
                         <img src="img/landingpage/dishes/${idName}/${item.img}.jpg" alt="${item.name}"
@@ -176,19 +177,20 @@ const showDish = (e) => {
                     </div>
                 </div>
             <div class="underline"></div>
-            `
-        } else if (item.type === 'drinks' && idName === 'drinks') {
-            let dish = document.createElement('div');
-            listDish.append(dish);
-            dish.classList.add("menu__options-dishes")
-            dish.innerHTML = `      
+            `;
+            } else if (item.type === 'drinks' && idName === 'drinks') {
+                let dish = document.createElement('div');
+                dish.classList.add("menu__options-dishes")
+                listDish.append(dish);
+
+                dish.innerHTML = `      
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
-                            <p class="dish__left-box-name">${item.name}</p>
+                            <p class="dish__left-box-name" >${item.name}</p>
                             <p class="dish__right-box-price">${item.price} zł</p>
                         </div>
-                        <button class="btn__dish" data-name="${item.name}" data-price="${item.price}">dodaj</button>
+                        <button class="btn__dish">dodaj</button>
                     </div>
                     <div class="dish__right-box">
                         <img src="img/landingpage/dishes/${idName}/${item.img}.jpg" alt="${item.name}"
@@ -196,57 +198,21 @@ const showDish = (e) => {
                     </div>
                 </div>
             <div class="underline"></div>
-            `
+            `;
+            }
         }
-    });
-
-    const allBtnPrice = document.querySelectorAll('.btn__dish');
-    const cartShoppingBox = document.querySelector('.cart__shopping-box');
-    const sumPriceCarts = document.querySelector('.sum__price-span');
-    const sumPriceText = document.querySelector('.sum__price-p');
-    const navInfoPrice = document.querySelector('.nav__info-shop-price');
-    const btnBack = document.querySelector('.menu__options-main-btn');
-
-
-    //the function adds items to the card with the given name and price
-    const showPrice = (e) => {
-
-        let dishPriceInCart = e.target.dataset.price;
-        console.log(dishPriceInCart)
-        let dishCart = document.createElement('div');
-        dishCart.classList.add('cart__shopping-box-dish');
-        cartShoppingBox.append(dishCart);
-        dishCart.innerHTML = `
-            <span class="box-dish">
-                <i class="fa-solid fa-trash-can"></i>
-                <p class="box-dish-name">${e.target.dataset.name}</p>
-            </span>
-            <p class="box-dish-price">${e.target.dataset.price} zł</p>
-        `;
-
-        //we add the given value "price" to the empty array, then sum the entire array and put it under the given variable
-        let priceDish = (e.target.dataset.price) * 1;
-        arrPrice.push(priceDish);
-
-        let sumArrPrice = arrPrice.reduce(function (prev, curr) {
-            return prev + curr
-        });
-
-        sumPriceText.textContent = 'Razem :';
-        sumPriceText.style.paddingRight = `3rem`;
-        sumPriceCarts.textContent = `${sumArrPrice} zł`;
-        navInfoPrice.textContent = `( ${sumArrPrice} zł )`;
-    }
-
-    //function which takes us back to the main menu after clicking the "powrót" button
-    const backToMenu = () => {
-        listDishAll.forEach(item => item.style.display = 'none');
-        iconDish.forEach(item => item.style.display = 'flex');
-        listDish.innerHTML = '';
-    }
-
-    allBtnPrice.forEach(item => item.addEventListener('click', showPrice));
-    btnBack.addEventListener('click', backToMenu);
+    )
 }
 
+
+const showPriceName = () => {
+    console.log('klik')
+}
+const allBtnAdd = document.querySelectorAll('.btn__dish');
+
+
+
+
+
+allBtnAdd.forEach(item => item.addEventListener('click', showPriceName));
 iconDish.forEach(item => item.addEventListener('click', showDish));
