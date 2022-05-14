@@ -3,6 +3,7 @@ const listDish = document.querySelector('.menu__options');
 const listDishAll = document.querySelectorAll('.menu__options');
 
 let arrPrice = [0];
+let priceDish;
 
 const showDish = (e) => {
     let idName = e.target.dataset.name
@@ -75,65 +76,54 @@ const showDish = (e) => {
     //the function adds items to the card with the given name and price
 
     const addDish = e => {
+
         let dishCart = document.createElement('div')
         dishCart.classList.add('cart__shopping-box-dish');
         cartShoppingBox.append(dishCart);
 
         dishCart.innerHTML = `
         <span class="box-dish">
-            <i class="fa-solid fa-trash-can"></i>
             <p class="box-dish-name">${e.target.dataset.name}</p>
         </span>
         <p class="box-dish-price">${e.target.dataset.price} zł</p>
     `
-        const priceDish = e.target.dataset.price * 1
+        priceDish = parseInt(e.target.dataset.price);
         arrPrice.push(priceDish);
         accountMoney();
-
-        const allTrashIcon = document.querySelectorAll('.fa-trash-can')
-        allTrashIcon.forEach(item => item.addEventListener('click', deleteItem));
     }
 
     const accountMoney = () => {
         let sumArrPrice = arrPrice.reduce(function (prev, curr) {
             return prev + curr
         })
-        console.log(sumArrPrice + ' wartość sum tablicy aktualna')
-        console.log(`========================================`)
 
-        sumPriceCarts.textContent = `Razem : ${sumArrPrice} zł.`
+        sumPriceCarts.textContent = `Razem: ${sumArrPrice} zł.`
         navInfoPrice.textContent = `${sumArrPrice} zł.`
-    }
-
-    const deleteItem = e => {
-        const removedItem = e.target.closest('div');
-        const removedItemAmount = parseInt(removedItem.childNodes[3].innerHTML);
-        const indexOfMeal = arrPrice.indexOf(removedItemAmount);
-
-        console.log(removedItem + ' item ktory chcemy usunac');
-        console.log(removedItemAmount + ' wartosc ktora chcemy usunac');
-        console.log(indexOfMeal + ` index z tablicy wartosci ktora chcemy usunac`);
-        console.log(arrPrice + ' tablica przed usunieciem')
-        arrPrice.splice(indexOfMeal, 1);
-        console.log(arrPrice + ' tablica po usunieciu')
-
-        removedItem.remove();
-        accountMoney();
-
-        if(arrPrice.length === 1) {
-            sumPriceCarts.textContent = 'Koszyk jest pusty.';
-            navInfoPrice.textContent = 'Koszyk pusty'
-        }
-
     }
 
     //function which takes us back to the main menu after clicking the "powrót" button
     const backToMenu = () => {
         listDishAll.forEach(item => (item.style.display = 'none'))
         iconDish.forEach(item => (item.style.display = 'flex'))
-        listDish.innerHTML = ''
-        accountMoney();
+        listDish.innerHTML = '';
     }
+
+    cartShoppingBox.addEventListener('click', event => {
+
+        const closestItem = event.target.closest('.cart__shopping-box-dish');
+        const price = parseInt(closestItem.querySelector('.box-dish-price').innerText);
+        console.log(price);
+        const indexOfMeal = arrPrice.indexOf(price);
+        arrPrice.splice(indexOfMeal, 1);
+        closestItem.remove();
+
+        accountMoney()
+
+        if (arrPrice.length === 1) {
+            sumPriceCarts.textContent = 'Koszyk jest pusty.';
+            navInfoPrice.textContent = 'Koszyk pusty'
+        }
+    });
 
     allBtnPrice.forEach(item => item.addEventListener('click', addDish))
     btnBack.addEventListener('click', backToMenu)

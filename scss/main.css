@@ -490,6 +490,10 @@ template {
   display: none;
 }
 
+.cart__shopping-textInfo {
+  text-align: center;
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -635,6 +639,7 @@ template {
 }
 .cart__shopping-box-dish .fa-trash-can {
   padding: 1rem;
+  cursor: pointer;
 }
 .cart__shopping-box-dish {
   display: flex;
