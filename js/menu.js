@@ -4,34 +4,35 @@ const listDishAll = document.querySelectorAll('.menu__options');
 const cartShoppingBox = document.querySelector('.cart__shopping-box');
 const sumPriceCarts = document.querySelector('.sum__price-span');
 const navInfoPrice = document.querySelector('.nav__info-shop-price');
-const tipDelete = document.querySelector('.cart__shopping-textInfo')
+const tipDelete = document.querySelector('.cart__shopping-textInfo');
+const btnCompleteOrder = document.querySelector('.btn__box')
 
 let arrPrice = [0];
 let priceDish;
 
 const showDish = e => {
-	let idName = e.target.dataset.name;
-	listDish.style.display = 'block';
-	let title = document.createElement('div');
-	title.classList.add('menu__options-main');
-	listDish.append(title);
-	iconDish.forEach(item => (item.style.display = 'none'));
+    let idName = e.target.dataset.name;
+    listDish.style.display = 'block';
+    let title = document.createElement('div');
+    title.classList.add('menu__options-main');
+    listDish.append(title);
+    iconDish.forEach(item => (item.style.display = 'none'));
 
-	title.innerHTML = `
+    title.innerHTML = `
                 <img src="img/landingpage/menu%20icon/${idName}.png" alt="${idName} icon"
                      class="menu__options-main-meal">
                 <p class="menu__options-main-text">${idName}</p>
                 <button class="menu__options-main-btn btn__dish-back">Powrót</button>
     `;
 
-	// we dynamically add all the dishes from the dishes array
+    // we dynamically add all the dishes from the dishes array
 
-	dishes.forEach(item => {
-		if (idName === item.type && idName !== 'drinks') {
-			let dish = document.createElement('div');
-			dish.classList.add('menu__options-dishes');
-			listDish.append(dish);
-			dish.innerHTML = `
+    dishes.forEach(item => {
+        if (idName === item.type && idName !== 'drinks') {
+            let dish = document.createElement('div');
+            dish.classList.add('menu__options-dishes');
+            listDish.append(dish);
+            dish.innerHTML = `
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
@@ -49,11 +50,11 @@ const showDish = e => {
             <div class="underline"></div>
             `;
 
-		} else if (item.type === 'drinks' && idName === 'drinks') {
-			let dish = document.createElement('div');
-			dish.classList.add('menu__options-dishes');
-			listDish.append(dish);
-			dish.innerHTML = `
+        } else if (item.type === 'drinks' && idName === 'drinks') {
+            let dish = document.createElement('div');
+            dish.classList.add('menu__options-dishes');
+            listDish.append(dish);
+            dish.innerHTML = `
                 <div class="menu__option_dish">
                     <div class="dish__left-main">
                         <div class="dish__left-box">
@@ -69,67 +70,72 @@ const showDish = e => {
                 </div>
             <div class="underline"></div>
             `;
-		}
-	});
+        }
+    });
 
-	const btnBack = document.querySelector('.menu__options-main-btn');
-	const allBtnPrice = document.querySelectorAll('.btn__dish');
+    const btnBack = document.querySelector('.menu__options-main-btn');
+    const allBtnPrice = document.querySelectorAll('.btn__dish');
 
-	//the function adds items to the card with the given name and price
+    //the function adds items to the card with the given name and price
 
-	const addDish = e => {
-		let dishCart = document.createElement('div');
-		dishCart.classList.add('cart__shopping-box-dish');
-		cartShoppingBox.append(dishCart);
+    const addDish = e => {
+        let dishCart = document.createElement('div');
+        dishCart.classList.add('cart__shopping-box-dish');
+        cartShoppingBox.append(dishCart);
 
-		dishCart.innerHTML = `
+        dishCart.innerHTML = `
         <span class="box-dish">
+            <i class="fa-solid fa-trash-can"></i>
             <p class="box-dish-name">${e.target.dataset.name}</p>
         </span>
         <p class="box-dish-price">${e.target.dataset.price} zł</p>
     `;
-		priceDish = parseInt(e.target.dataset.price);
-		arrPrice.push(priceDish);
-		accountMoney();
-	};
+        priceDish = parseInt(e.target.dataset.price);
+        arrPrice.push(priceDish);
+        accountMoney();
+    };
 
-	//function which takes us back to the main menu after clicking the "powrót" button
+    //function which takes us back to the main menu after clicking the "powrót" button
 
-	const backToMenu = () => {
-		listDishAll.forEach(item => (item.style.display = 'none'));
-		iconDish.forEach(item => (item.style.display = 'flex'));
-		listDish.innerHTML = '';
-	};
+    const backToMenu = () => {
+        listDishAll.forEach(item => (item.style.display = 'none'));
+        iconDish.forEach(item => (item.style.display = 'flex'));
+        listDish.innerHTML = '';
+    };
 
-	allBtnPrice.forEach(item => item.addEventListener('click', addDish));
-	btnBack.addEventListener('click', backToMenu);
+    allBtnPrice.forEach(item => item.addEventListener('click', addDish));
+    btnBack.addEventListener('click', backToMenu);
 };
 
 const accountMoney = () => {
-	let sumArrPrice = arrPrice.reduce(function (prev, curr) {
-		return prev + curr;
-	});
+    let sumArrPrice = arrPrice.reduce(function (prev, curr) {
+        return prev + curr;
+    });
 
-	sumPriceCarts.textContent = `Razem: ${sumArrPrice} zł.`;
-	navInfoPrice.textContent = `Wartość: ${sumArrPrice} zł.`;
+    sumPriceCarts.textContent = `Razem: ${sumArrPrice} zł.`;
+    navInfoPrice.textContent = `Wartość: ${sumArrPrice} zł.`;
     tipDelete.textContent = 'Usuń pozycję klikając na nią'
+    btnCompleteOrder.style.display = 'block'
 };
 
 cartShoppingBox.addEventListener('click', event => {
-	const closestItem = event.target.closest('.cart__shopping-box-dish');
-	const price = parseInt(closestItem.querySelector('.box-dish-price').innerText);
-	console.log(price);
-	const indexOfMeal = arrPrice.indexOf(price);
-	arrPrice.splice(indexOfMeal, 1);
-	closestItem.remove();
+    const closestItem = event.target.closest('.cart__shopping-box-dish');
+    console.log(closestItem)
+    const price = parseInt(closestItem.querySelector('.box-dish-price').innerText);
+    console.log(price);
+    const indexOfMeal = arrPrice.indexOf(price);
+    arrPrice.splice(indexOfMeal, 1);
+    closestItem.remove();
 
-	accountMoney();
+    accountMoney();
 
-	if (arrPrice.length === 1) {
-		sumPriceCarts.textContent = 'Koszyk jest pusty.';
-		navInfoPrice.textContent = 'Koszyk pusty';
+    if (arrPrice.length === 1) {
+        sumPriceCarts.textContent = 'Koszyk jest pusty.';
+        navInfoPrice.textContent = 'Koszyk pusty';
         tipDelete.textContent = '';
-	}
+        btnCompleteOrder.style.display = 'none'
+
+    }
 });
 
 iconDish.forEach(item => item.addEventListener('click', showDish));

@@ -40,6 +40,8 @@
     &-dish {
       display: flex;
       align-items: center;
+      cursor: pointer;
+
 
       .box-dish {
         display: flex;
@@ -152,8 +154,9 @@
   .sum__price {
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    justify-content: center;
     font-weight: bold;
     margin: 1rem 0;
 
@@ -179,5 +182,7 @@
   }
 
   .btn__box {
+    margin-top: 1rem;
+    display: none;
   }
 }

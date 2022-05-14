@@ -632,6 +632,7 @@ template {
 .cart__shopping-box-dish {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .cart__shopping-box-dish .box-dish {
   display: flex;
@@ -725,8 +726,9 @@ template {
 .cart__shopping .sum__price {
   position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  justify-content: center;
   font-weight: bold;
   margin: 1rem 0;
 }
@@ -747,6 +749,11 @@ template {
 .cart__shopping .sum__price .sum__price-span {
   font-size: 2rem;
 }
+.cart__shopping .btn__box {
+  margin-top: 1rem;
+  display: none;
+}
+
 .menu__options {
   position: absolute;
   width: 100%;
