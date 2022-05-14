@@ -4,6 +4,7 @@ const listDishAll = document.querySelectorAll('.menu__options');
 const cartShoppingBox = document.querySelector('.cart__shopping-box');
 const sumPriceCarts = document.querySelector('.sum__price-span');
 const navInfoPrice = document.querySelector('.nav__info-shop-price');
+const tipDelete = document.querySelector('.cart__shopping-textInfo')
 
 let arrPrice = [0];
 let priceDish;
@@ -47,6 +48,7 @@ const showDish = e => {
                 </div>
             <div class="underline"></div>
             `;
+
 		} else if (item.type === 'drinks' && idName === 'drinks') {
 			let dish = document.createElement('div');
 			dish.classList.add('menu__options-dishes');
@@ -92,6 +94,7 @@ const showDish = e => {
 	};
 
 	//function which takes us back to the main menu after clicking the "powrót" button
+
 	const backToMenu = () => {
 		listDishAll.forEach(item => (item.style.display = 'none'));
 		iconDish.forEach(item => (item.style.display = 'flex'));
@@ -108,7 +111,8 @@ const accountMoney = () => {
 	});
 
 	sumPriceCarts.textContent = `Razem: ${sumArrPrice} zł.`;
-	navInfoPrice.textContent = `${sumArrPrice} zł.`;
+	navInfoPrice.textContent = `Wartość: ${sumArrPrice} zł.`;
+    tipDelete.textContent = 'Usuń pozycję klikając na nią'
 };
 
 cartShoppingBox.addEventListener('click', event => {
@@ -124,6 +128,7 @@ cartShoppingBox.addEventListener('click', event => {
 	if (arrPrice.length === 1) {
 		sumPriceCarts.textContent = 'Koszyk jest pusty.';
 		navInfoPrice.textContent = 'Koszyk pusty';
+        tipDelete.textContent = '';
 	}
 });
 
