@@ -2,7 +2,7 @@ const iconDish = document.querySelectorAll(".header__menu-box");
 const listDish = document.querySelector('.menu__options');
 const listDishAll = document.querySelectorAll('.menu__options');
 
-let arrPrice = [];
+let arrPrice = [0];
 
 const showDish = (e) => {
     let idName = e.target.dataset.name
@@ -68,11 +68,9 @@ const showDish = (e) => {
 
     const cartShoppingBox = document.querySelector('.cart__shopping-box');
     const sumPriceCarts = document.querySelector('.sum__price-span');
-    const sumPriceText = document.querySelector('.sum__price-p');
     const navInfoPrice = document.querySelector('.nav__info-shop-price');
     const btnBack = document.querySelector('.menu__options-main-btn');
     const allBtnPrice = document.querySelectorAll('.btn__dish');
-
 
     //the function adds items to the card with the given name and price
 
@@ -80,6 +78,7 @@ const showDish = (e) => {
         let dishCart = document.createElement('div')
         dishCart.classList.add('cart__shopping-box-dish');
         cartShoppingBox.append(dishCart);
+
         dishCart.innerHTML = `
         <span class="box-dish">
             <i class="fa-solid fa-trash-can"></i>
@@ -87,46 +86,45 @@ const showDish = (e) => {
         </span>
         <p class="box-dish-price">${e.target.dataset.price} zł</p>
     `
-        console.log(arrPrice)
         const priceDish = e.target.dataset.price * 1
-        arrPrice.push(priceDish)
-        console.log(arrPrice)
+        arrPrice.push(priceDish);
+        accountMoney();
 
+        const allTrashIcon = document.querySelectorAll('.fa-trash-can')
+        allTrashIcon.forEach(item => item.addEventListener('click', deleteItem));
+    }
 
+    const accountMoney = () => {
         let sumArrPrice = arrPrice.reduce(function (prev, curr) {
             return prev + curr
         })
-        console.log(sumArrPrice)
+        console.log(sumArrPrice + ' wartość sum tablicy aktualna')
+        console.log(`========================================`)
 
-        sumPriceText.textContent = 'Razem :'
-        sumPriceText.style.paddingRight = `3rem`
-        sumPriceCarts.textContent = `${sumArrPrice}`
-        navInfoPrice.textContent = `${sumArrPrice}`
-
-        const allTrashIcon = document.querySelectorAll('.fa-trash-can')
-        allTrashIcon.forEach(item => item.addEventListener('click', deleteItem))
+        sumPriceCarts.textContent = `Razem : ${sumArrPrice} zł.`
+        navInfoPrice.textContent = `${sumArrPrice} zł.`
     }
 
     const deleteItem = e => {
-        let navInfoPrice = document.querySelector('.nav__info-shop-price');
-        console.log(navInfoPrice.textContent);
-        let priceNew = navInfoPrice.textContent;
+        const removedItem = e.target.closest('div');
+        const removedItemAmount = parseInt(removedItem.childNodes[3].innerHTML);
+        const indexOfMeal = arrPrice.indexOf(removedItemAmount);
 
-        let parent = e.target.parentElement.parentElement;
-        let price = parseInt(parent.querySelector('.box-dish-price').textContent)
-        console.log(arrPrice)
-        console.log(priceNew - price)
-        let newPrice = priceNew - price;
-        let sumArrPrice = newPrice
+        console.log(removedItem + ' item ktory chcemy usunac');
+        console.log(removedItemAmount + ' wartosc ktora chcemy usunac');
+        console.log(indexOfMeal + ` index z tablicy wartosci ktora chcemy usunac`);
+        console.log(arrPrice + ' tablica przed usunieciem')
+        arrPrice.splice(indexOfMeal, 1);
+        console.log(arrPrice + ' tablica po usunieciu')
 
-        const removedItem =  e.target.closest('div');
         removedItem.remove();
+        accountMoney();
 
+        if(arrPrice.length === 1) {
+            sumPriceCarts.textContent = 'Koszyk jest pusty.';
+            navInfoPrice.textContent = 'Koszyk pusty'
+        }
 
-        sumPriceText.textContent = 'Razem :'
-        sumPriceText.style.paddingRight = `3rem`
-        sumPriceCarts.textContent = `${newPrice}`
-        navInfoPrice.textContent = `${newPrice}`
     }
 
     //function which takes us back to the main menu after clicking the "powrót" button
@@ -134,6 +132,7 @@ const showDish = (e) => {
         listDishAll.forEach(item => (item.style.display = 'none'))
         iconDish.forEach(item => (item.style.display = 'flex'))
         listDish.innerHTML = ''
+        accountMoney();
     }
 
     allBtnPrice.forEach(item => item.addEventListener('click', addDish))
