@@ -26,7 +26,6 @@ const showDish = e => {
     `;
 
     // we dynamically add all the dishes from the dishes array
-
     dishes.forEach(item => {
         if (idName === item.type && idName !== 'drinks') {
             let dish = document.createElement('div');
@@ -77,7 +76,6 @@ const showDish = e => {
     const allBtnPrice = document.querySelectorAll('.btn__dish');
 
     //the function adds items to the card with the given name and price
-
     const addDish = e => {
         let dishCart = document.createElement('div');
         dishCart.classList.add('cart__shopping-box-dish');
@@ -96,7 +94,6 @@ const showDish = e => {
     };
 
     //function which takes us back to the main menu after clicking the "powrót" button
-
     const backToMenu = () => {
         listDishAll.forEach(item => (item.style.display = 'none'));
         iconDish.forEach(item => (item.style.display = 'flex'));
