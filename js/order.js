@@ -1,4 +1,4 @@
-const btnOrderSummary = document.querySelector('.btn__box');
+const btnOrderSummary = document.querySelector('.btnssda');
 const windowOrderSummary = document.querySelector('.order');
 const orderSum = document.querySelector('.order__p-sum')
 
