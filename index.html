@@ -118,12 +118,42 @@
         <span class="sum__price-span">Koszyk jest pusty.</span>
         <button class="btn__box blue__btn">Podsumowanie zamówienia</button>
     </div>
+</section>
 
+<section class="order">
+    <h3 class="order__h3">Podsumowanie zamówienia</h3>
+    <p class="order__p">Wartość zamówienia : <span class="order__p-sum">123</span> zł.</p>
+    <form class="order__form">
+        <label for="name-order" class="welcome__form-label" type="text">Podaj imię</label>
+        <input type="text" class="welcome__form-input" placeholder="Wpisz imię" id="name-order">
+
+        <label for="surname-order" class="welcome__form-label" type="text">Podaj nazwisko</label>
+        <input type="text" class="welcome__form-input" placeholder="Wpisz nazwisko" id="surname-order">
+
+        <label for="address-order" class="welcome__form-label" type="text">Podaj adres</label>
+        <input type="text" class="welcome__form-input" placeholder="Wpisz adres" id="address-order">
+
+        <label for="phone-order" class="welcome__form-label" type="text">Number kontaktowy</label>
+        <input type="number" class="welcome__form-input" placeholder="Numer telefonu" id="phone-order">
+
+        <label for="pay-order" class="welcome__form-label" type="text">Wybierz rodzaj zapłaty</label>
+        <select id="pay-order">
+            <option value="cash">Gotówka</option>
+            <option value="card">Karta u kuriera</option>
+            <option value="transfer">Przelew</option>
+        </select>
+
+
+
+
+
+    </form>
 </section>
 
 <script src="js/script.js"></script>
 <script src="js/dishes.js"></script>
 <script src="js/menu.js"></script>
+<script src="js/order.js"></script>
 <!--<script src="js/test1.js"></script>-->
 </body>
 </html>

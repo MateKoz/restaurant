@@ -125,6 +125,7 @@ cartShoppingBox.addEventListener('click', event => {
     closestItem.remove();
 
     accountMoney();
+    showWindow();
 
     if (arrPrice.length === 1) {
         sumPriceCarts.textContent = 'Koszyk jest pusty.';

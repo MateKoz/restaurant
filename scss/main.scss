@@ -2,10 +2,11 @@
 @import "welcome/welcome-page";
 @import "colors";
 @import "components";
-@import "landingpage/nav";
-@import "landingpage/header";
-@import "landingpage/menuBox";
-@import "landingpage/header-menu";
+@import "app/nav";
+@import "app/header";
+@import "app/menuBox";
+@import "app/header-menu";
+@import "app/order";
 
 html {
   font-size: 62.5%;
