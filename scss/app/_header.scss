@@ -4,17 +4,6 @@
   width: 100%;
   color: $text-color;
 
-  .bgc-shadow {
-    position: absolute;
-    background-color: rgba(61, 61, 61, 0.49);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 170%;
-    display: none;
-    z-index: 10;
-  }
-
   &__welcome {
     align-self: center;
     text-align: center;
@@ -31,7 +20,6 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0.5rem;
-    //display: none;
 
     &-box {
       display: flex;

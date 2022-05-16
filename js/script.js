@@ -5,7 +5,6 @@ const personName = document.querySelector('.header__name-input');
 const errorInputWelcome = document.querySelector('.welcome__form-input-error');
 const cartShop = document.querySelector(".nav__info-right");
 const menuDishes = document.querySelector('.cart__shopping');
-const shadowCarts = document.querySelector(".bgc-shadow");
 const cancelBoxMenu = document.querySelector(".fa-xmark")
 
 // confirm name and set form to display none. localstorage for name in input.
@@ -33,13 +32,11 @@ showName();
 //function opens the list of selected dishes after clicking on the cart in the navigation;
 const showMenu = () => {
     menuDishes.style.display = 'block';
-    shadowCarts.style.display = 'block';
 }
 
 //display none after clicking X btn in menu carts shopping
 const disableCarts = () => {
     menuDishes.style.display = 'none';
-    shadowCarts.style.display = 'none';
 }
 
 //listener

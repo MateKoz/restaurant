@@ -65,6 +65,10 @@ p {
   .header__welcome {
     font-size: 3rem;
   }
+
+  option {
+    font-size: 1rem;
+  }
 }
 
 @media(min-width: 992px) {
@@ -83,18 +87,38 @@ p {
   .order {
     &__h3 {
       font-size: 4rem;
+      margin: 0;
     }
+
     &__p {
       font-size: 2rem;
     }
+
     &__form {
       label {
         font-size: 2rem;
       }
-.order__form-box-btn {
-  padding: 1rem 2rem;
-}
+
+      .order__form-box-btn {
+        padding: 1rem 2rem;
+      }
     }
 
+    option {
+      font-size: 2rem;
+    }
+    select {
+      width: 60%;
+      padding: 1rem;
+    }
+    input {
+      margin-bottom: 1.5rem;
+      width: 60%;
+      padding: 1rem;
+    }
+
+    .welcome__form-label {
+      font-size: 2.5rem;
+    }
   }
 }

@@ -27,13 +27,14 @@
   transition: .3s;
 
   &:hover {
-    transform: scale(1.1);
+    background-color: royalblue;
   }
 }
 
 .btn__dish {
   width: 10rem;
   border: none;
+  color: $pure-white;
   background-color: $main-blue;
   padding: 0.5rem 2rem;
   border-radius: 13px;
@@ -41,7 +42,7 @@
   transition: 0.3s;
 
   &:hover {
-    transform: scale(1.1);
+    background-color: royalblue;
   }
 }
 
