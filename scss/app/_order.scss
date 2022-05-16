@@ -10,13 +10,17 @@
   height: 100vh;
   top: 0;
   background-color: $main-white;
-  visibility: hidden;
-  z-index: 10;
+  //visibility: hidden;
+  z-index: 100;
 
   &__h3 {
-    margin-top: 7rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     font-size: 2.5rem;
+    text-align: center;
+  }
+  &__p-sum {
+    font-weight: bold;
   }
 }
 
@@ -26,6 +30,8 @@
   flex-direction: column;
   align-items: center;
   width: 80%;
+  min-width: 28rem;
+  max-width: 57rem;
   margin: 2rem;
   border-radius: 1rem;
   box-shadow: 0 2px 10px -2px #3d3d3d;
@@ -36,18 +42,22 @@
 
   input {
     border: 1px solid #3d3d3d;
+    text-align: center;
   }
-  select {
+
+  option {
+    margin: 0;
     padding: 0;
+    font-size: 1rem;
   }
   .welcome__form-label {
-    margin: 1.5rem 1rem 0 1rem;
+    margin-top: 1rem;
   }
 
   .order__form-box {
     display: flex;
 
-    .back {
+    .return__btn-summary {
       background-color: $pure-white;
       border: 1px solid $main-first-blue;
       color: $main-first-blue;
@@ -55,7 +65,7 @@
 
     &-btn {
       font-size: 1.5rem;
-      margin: 1.5rem;
+      margin: 1.5rem 0.5rem;
       padding: 0.5rem 2rem;
     }
   }
@@ -66,4 +76,11 @@
     min-height: 150px;
     max-height: 250px;
   }
+  .order__form-error {
+    text-align: center;
+    color: tomato;
+    font-size: 1.6rem;
+    visibility: hidden;
+  }
 }
+

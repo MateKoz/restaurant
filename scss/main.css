@@ -842,13 +842,16 @@ template {
   height: 100vh;
   top: 0;
   background-color: rgb(241, 241, 241);
-  visibility: hidden;
-  z-index: 10;
+  z-index: 100;
 }
 .order__h3 {
-  margin-top: 7rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2.5rem;
+  text-align: center;
+}
+.order__p-sum {
+  font-weight: bold;
 }
 
 .order__form {
@@ -857,6 +860,8 @@ template {
   flex-direction: column;
   align-items: center;
   width: 80%;
+  min-width: 28rem;
+  max-width: 57rem;
   margin: 2rem;
   border-radius: 1rem;
   box-shadow: 0 2px 10px -2px #3d3d3d;
@@ -866,24 +871,27 @@ template {
 }
 .order__form input {
   border: 1px solid #3d3d3d;
+  text-align: center;
 }
-.order__form select {
+.order__form option {
+  margin: 0;
   padding: 0;
+  font-size: 1rem;
 }
 .order__form .welcome__form-label {
-  margin: 1.5rem 1rem 0 1rem;
+  margin-top: 1rem;
 }
 .order__form .order__form-box {
   display: flex;
 }
-.order__form .order__form-box .back {
+.order__form .order__form-box .return__btn-summary {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgb(47, 133, 185);
   color: rgb(47, 133, 185);
 }
 .order__form .order__form-box-btn {
   font-size: 1.5rem;
-  margin: 1.5rem;
+  margin: 1.5rem 0.5rem;
   padding: 0.5rem 2rem;
 }
 .order__form .form__order-textarea {
@@ -891,6 +899,12 @@ template {
   max-width: 300px;
   min-height: 150px;
   max-height: 250px;
+}
+.order__form .order__form-error {
+  text-align: center;
+  color: tomato;
+  font-size: 1.6rem;
+  visibility: hidden;
 }
 
 html {
@@ -964,6 +978,19 @@ p {
 
   .header__menu-box {
     width: 40%;
+  }
+
+  .order__h3 {
+    font-size: 4rem;
+  }
+  .order__p {
+    font-size: 2rem;
+  }
+  .order__form label {
+    font-size: 2rem;
+  }
+  .order__form .order__form-box-btn {
+    padding: 1rem 2rem;
   }
 }
 

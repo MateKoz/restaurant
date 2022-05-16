@@ -42,6 +42,7 @@ p {
   }
 }
 
+
 @media(min-width: 768px) {
   .welcome__box-background {
     background-image: url("../img/welcome background/bgc-welcome-big.jpg");
@@ -77,5 +78,23 @@ p {
   }
   .header__menu-box {
     width: 40%;
+  }
+
+  .order {
+    &__h3 {
+      font-size: 4rem;
+    }
+    &__p {
+      font-size: 2rem;
+    }
+    &__form {
+      label {
+        font-size: 2rem;
+      }
+.order__form-box-btn {
+  padding: 1rem 2rem;
+}
+    }
+
   }
 }

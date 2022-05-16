@@ -116,28 +116,40 @@
 
     <div class="sum__price">
         <span class="sum__price-span">Koszyk jest pusty.</span>
-        <button class="btn__box blue__btn btnssda">Podsumowanie zamówienia</button>
+        <button class="btn__box blue__btn btn__summary-cart">Podsumowanie zamówienia</button>
     </div>
 </section>
 
+
+<!--order form-->
+<!--order form-->
 <section class="order">
     <h3 class="order__h3">Podsumowanie zamówienia</h3>
-    <p class="order__p">Wartość zamówienia : <span class="order__p-sum"></span></p>
+    <p class="order__p">Wartość zamówienia : <span class="order__p-sum">123</span></p>
     <form class="order__form">
         <label for="name-order" class="welcome__form-label" type="text">Podaj imię*</label>
-        <input type="text" class="welcome__form-input" placeholder="Wpisz imię" id="name-order">
+        <input  type="text" class="welcome__form-input required" placeholder="Wpisz imię" id="name-order">
+        <p class="order__form-error">Uzupełnij dane pole</p>
 
         <label for="surname-order" class="welcome__form-label" type="text">Podaj nazwisko*</label>
-        <input type="text" class="welcome__form-input" placeholder="Wpisz nazwisko" id="surname-order">
+        <input  type="text" class="welcome__form-input required" placeholder="Wpisz nazwisko" id="surname-order">
+        <p class="order__form-error">Uzupełnij dane pole</p>
+
+        <label for="city-order" class="welcome__form-label" type="text">Podaj miasto*</label>
+        <input  type="text" class="welcome__form-input required" placeholder="Wpisz miasto" id="city-order">
+        <p class="order__form-error">Uzupełnij dane pole</p>
 
         <label for="address-order" class="welcome__form-label" type="text">Podaj adres*</label>
-        <input type="text" class="welcome__form-input" placeholder="Wpisz adres" id="address-order">
+        <input  type="text" class="welcome__form-input required" placeholder="Wpisz adres" id="address-order">
+        <p class="order__form-error">Uzupełnij dane pole</p>
 
         <label for="phone-order" class="welcome__form-label" type="text">Number kontaktowy*</label>
-        <input type="number" cla ss="welcome__form-input" placeholder="Numer telefonu" id="phone-order">
+        <input  type="number" class="welcome__form-input required" placeholder="Numer telefonu" id="phone-order">
+        <p class="order__form-error">Uzupełnij dane pole</p>
 
         <label for="pay-order" class="welcome__form-label" type="text">Wybierz rodzaj zapłaty*</label>
         <select id="pay-order">
+            <option value="none" selected disabled>Wybierz opcję</option>
             <option value="cash">Gotówka</option>
             <option value="card">Karta u kuriera</option>
             <option value="transfer">Przelew</option>
@@ -148,7 +160,7 @@
 
         <div class="order__form-box">
             <button class="order__form-box-btn blue__btn send-order">Wyślij zamówienie</button>
-            <button class="order__form-box-btn blue__btn back">Powrót</button>
+            <button class="order__form-box-btn blue__btn return__btn-summary">Powrót</button>
         </div>
 
 

@@ -113,6 +113,14 @@ const accountMoney = () => {
     navInfoPrice.textContent = `Wartość: ${sumArrPrice} zł.`;
     tipDelete.textContent = 'Usuń pozycję klikając na nią'
     btnCompleteOrder.style.display = 'block'
+
+    if (arrPrice.length === 1) {
+        sumPriceCarts.textContent = 'Koszyk jest pusty.';
+        navInfoPrice.textContent = 'Koszyk pusty';
+        tipDelete.textContent = '';
+        btnCompleteOrder.style.display = 'none'
+
+    }
 };
 
 cartShoppingBox.addEventListener('click', event => {
@@ -125,7 +133,6 @@ cartShoppingBox.addEventListener('click', event => {
     closestItem.remove();
 
     accountMoney();
-    showWindow();
 
     if (arrPrice.length === 1) {
         sumPriceCarts.textContent = 'Koszyk jest pusty.';
