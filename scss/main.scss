@@ -69,6 +69,10 @@ p {
   option {
     font-size: 1rem;
   }
+
+  .order__h3 {
+    font-size: 3rem;
+  }
 }
 
 @media(min-width: 992px) {
@@ -86,7 +90,7 @@ p {
 
   .order {
     &__h3 {
-      font-size: 2rem;
+      font-size: 3rem;
       margin: 0;
     }
 

@@ -829,7 +829,6 @@ template {
   flex-direction: column;
   position: absolute;
   width: 100vw;
-  padding-top: 2rem;
   margin-bottom: 2rem;
   height: 100vh;
   top: 0;
@@ -838,7 +837,6 @@ template {
   z-index: 100;
 }
 .order__h3 {
-  margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2rem;
   text-align: center;
@@ -897,8 +895,8 @@ template {
 .order__form .form__order-textarea {
   min-width: 80%;
   max-width: 300px;
-  min-height: 100px;
-  max-height: 150px;
+  min-height: 50px;
+  max-height: 100px;
   border: 1px solid #3d3d3d;
 }
 
@@ -973,6 +971,10 @@ p {
   option {
     font-size: 1rem;
   }
+
+  .order__h3 {
+    font-size: 3rem;
+  }
 }
 @media (min-width: 992px) {
   .welcome__box-form {
@@ -990,7 +992,7 @@ p {
   }
 
   .order__h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0;
   }
   .order__p {
