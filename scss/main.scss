@@ -86,7 +86,7 @@ p {
 
   .order {
     &__h3 {
-      font-size: 4rem;
+      font-size: 2rem;
       margin: 0;
     }
 
@@ -95,30 +95,37 @@ p {
     }
 
     &__form {
+      margin-top: 0;
+      margin-bottom: 2rem;
+
       label {
-        font-size: 2rem;
+        font-size: 1rem;
       }
 
       .order__form-box-btn {
         padding: 1rem 2rem;
       }
     }
-
+    textarea {
+      width: 60%;
+      min-height: 50px;
+      max-height: 150px;
+    }
     option {
       font-size: 2rem;
     }
     select {
       width: 60%;
-      padding: 1rem;
+      padding: 0.5rem;
     }
     input {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       width: 60%;
-      padding: 1rem;
+      padding: 0.5rem;
     }
 
     .welcome__form-label {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
 }

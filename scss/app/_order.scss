@@ -7,16 +7,18 @@
   flex-direction: column;
   position: absolute;
   width: 100vw;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
   height: 100vh;
   top: 0;
   background-color: $main-white;
-  visibility: hidden;
+  //visibility: hidden;
   z-index: 100;
 
   &__h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
   }
 
@@ -35,7 +37,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 60%;
   min-width: 28rem;
   max-width: 57rem;
   margin: 1rem;
@@ -44,11 +46,16 @@
 
   label {
     font-weight: bold;
+    font-size: 1.6rem;
   }
 
   input {
     border: 1px solid #3d3d3d;
     text-align: center;
+    width: 60%;
+  }
+
+  select {
     width: 60%;
   }
 
@@ -72,7 +79,7 @@
 
     &-btn {
       font-size: 1.3rem;
-      margin: 1.5rem 0.5rem;
+      margin: 1rem 0.5rem;
       padding: 0.5rem 2rem;
     }
   }
@@ -80,8 +87,8 @@
   .form__order-textarea {
     min-width: 80%;
     max-width: 300px;
-    min-height: 150px;
-    max-height: 250px;
+    min-height: 100px;
+    max-height: 150px;
     border: 1px solid #3d3d3d;
   }
 }
@@ -92,6 +99,7 @@
   color: tomato;
   font-size: 1.6rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   visibility: hidden;
 }
 
